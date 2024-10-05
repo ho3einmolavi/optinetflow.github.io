@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <!-- Primary Meta Tags -->
-    <title>OptinetFlow - VPN Solutions with Multi-Brand Support</title>
+    <title>OptinetFlow | VPN Solutions with Multi-Brand Support</title>
     <meta name="title" content="OptinetFlow - VPN Solutions with Multi-Brand Support" />
     <meta name="description" content="OptinetFlow provides top VPN solutions with multi-brand support, custom Telegram bots, and global access—ideal for scalable VPN services" />
 
@@ -24,7 +24,6 @@
     <meta property="twitter:description" content="OptinetFlow provides top VPN solutions with multi-brand support, custom Telegram bots, and global access—ideal for scalable VPN services" />
     <meta property="twitter:image" content="https://optinetflow.com/img/optinetflow.png" />
 
-<!-- Meta Tags Generated with https://metatags.io -->
     <!--Inter UI font-->
     <link href="https://rsms.me/inter/inter-ui.css" rel="stylesheet">
 
@@ -36,6 +35,69 @@
     <!-- Bootstrap CSS / Color Scheme -->
     <link rel="stylesheet" href="css/default.css" id="theme-color">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+         :root {
+            --primary-color: #1de9b6;
+         }
+
+    .footer {
+        background-color: rgba(20, 169, 137, 0.1);
+        padding: 40px 0;
+        margin-top: 40px;
+        border-top: 1px solid var(--primary-color);
+    }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+
+  .footer-info, .footer-social {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 20px;
+  }
+
+  .footer-info h3, .footer-social h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+  }
+
+  .footer-info p {
+    margin-bottom: 10px;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 15px;
+  }
+
+  .social-icons a {
+    color: var(--text-color);
+    font-size: 24px;
+    transition: color 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    color: var(--primary-color);
+  }
+
+  .copyright {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(29, 233, 182, 0.3);
+  }
+
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+    }
+  }
+    </style>
+
 </head>
 <body>
 
@@ -54,7 +116,7 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#teams">VPN For Teams</a>
+                        <a class="nav-link page-scroll" href="/teams.html">VPN For Teams</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link page-scroll" href="#features">Features</a>
@@ -137,9 +199,8 @@
         </div>
         <div class="row">
             <div class="col-md-6 mx-auto text-center">
-                <a href="https://t.me/optinetflowbot" class="btn btn-light" target="_blank">
-                    <i class="fab fa-telegram-plane mr-2"></i> DM us on Telegram
-                     to get started!
+                <a href="/teams.html" class="btn btn-light" target="_blank">
+                    <i class="fa fa-users mr-2"></i> VPN for Teams
                 </a>
             </div>
         </div>
@@ -281,15 +342,23 @@
 </section>
 
 <!--footer-->
-<footer class="py-1">
+<footer>
     <div class="container">
-        <div class="row">
-            <div class="col-12 text-muted text-center small-xl">
-                &copy; 2024 OptinetFlow - All Rights Reserved
-            </div>
+      <div class="footer-content">
+        <div class="footer-info">
+          <h3>Contact Us</h3>
+          <p>Email: info@optinetflow.com</p>
         </div>
+        <div class="footer-social">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="https://linkedin.com/company/optinet-flow" target="_blank"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      <p class="copyright">© 2023 OptiNetFlow. All rights reserved.</p>
     </div>
-</footer>
+  </footer>
 
 
 <!--scroll to top-->
