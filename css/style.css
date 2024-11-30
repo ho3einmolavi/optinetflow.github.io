@@ -10,7 +10,7 @@ html {
 }
 
 body {
-    font-family: 'Vazir', sans-serif;
+    font-family: 'IranSans', 'Vazir', sans-serif;
     background-color: #000;
     color: #fff;
     line-height: 1.6;
@@ -144,7 +144,42 @@ body {
     }
 }
 
+.secondary-button {
+    background-color: transparent;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 18px;
+    border: 2px solid #fff;
+    transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
 
+.secondary-button:hover {
+    background-color: #fff;
+    color: #000;
+    border: 2px solid #000;
+}
+
+
+.cta-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.secondary-button {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1em;
+    transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
 
 .cta-button {
     background-color: #fff;
@@ -153,6 +188,7 @@ body {
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
+    font-size: 1em;
     transition: background-color 0.3s, color 0.3s, border 0.3s;
 }
 
@@ -225,19 +261,17 @@ section.visible {
 /* Responsive Design for Hero Section */
 @media (max-width: 768px) {
     .hero h1 {
-        font-size: 32px;
+        font-size: 1.5em;
     }
-    
+
     .hero p {
-        font-size: 16px;
+        font-size: 1em;
     }
-    
-    .cta-button {
-        padding: 10px 20px;
-        font-size: 14px;
+
+    .cta-buttons {
+        flex-direction: column;
     }
 }
-
 
 /* VPN for Teams Section */
 .vpn-for-teams .section-header {
@@ -246,9 +280,21 @@ section.visible {
 }
 
 .vpn-for-teams .section-description {
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 15px;
     line-height: 1.8;
+}
+
+.vpn-details p {
+    font-size: 18px;
+    color: #ccc;
+    margin: 5px 0;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.vpn-details p strong {
+    color: #FFD700;
 }
 
 /* Pricing Section */
@@ -312,6 +358,60 @@ section.visible {
 
 .reselling-program .cta-button {
     margin-top: 20px;
+}
+.reselling-program {
+    padding: 50px 20px;
+    background-color: #222;
+    color: #fff;
+    border-radius: 8px;
+    text-align: center;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.section-description {
+    font-size: 18px;
+    color: #ccc;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.section-subheader {
+    font-size: 20px;
+    color: #fff;
+    margin: 20px 0 10px;
+    font-weight: bold;
+}
+
+.section-highlight {
+    font-size: 18px;
+    color: #FFD700;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.reselling-details {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.reselling-details p {
+    font-size: 18px;
+    color: #ccc;
+    margin: 5px 0;
+    line-height: 1.8;
+}
+
+.reselling-details p strong {
+    color: #FFD700;
+}
+
+.cta-description {
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 20px;
+    font-weight: bold;
 }
 
 /* Testimonials Section */
