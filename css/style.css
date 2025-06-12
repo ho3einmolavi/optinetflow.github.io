@@ -1,88 +1,49 @@
+/* === General Reset === */
 html,
 body {
   margin: 0;
   padding: 0;
   font-family: "Vazir", sans-serif;
   background: #fff;
+  height: 100%;
 }
 
+/* === Wrapper & Carousel === */
 .carousel-wrapper {
   position: relative;
-  width: 100%;
-  height: 100vh; /* Full viewport height */
+  width: 100vw;
+  height: 100svh;
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* Optional for elevation */
-}
-
-.carousel-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  will-change: transform;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 .carousel {
   display: flex;
   height: 100%;
   transition: transform 0.5s ease-in-out;
-  will-change: transform;
 }
 
 .carousel-item {
-  min-width: 100%;
+  /* aspect-ratio: 16 / 9;     modern browsers */
+  flex: 1;
+  width: 100vw;
+  max-height: 100svh;
+}
+
+/* === Image Sizing === */
+.carousel-item img {
+  width: 100vw;
   height: 100%;
+  object-fit: cover; /* preserve aspect‑ratio, fill box */
+  object-position: center; /* keep subject in the middle */
 }
 
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.4);
-  color: white;
-  border: none;
-  padding: 12px;
-  cursor: pointer;
-  border-radius: 50%;
-  font-size: 24px;
-  z-index: 10;
+/* === Mobile-only visibility === */
+.carousel-item.mobile-only {
+  display: none;
 }
 
-.carousel-btn.prev {
-  left: 20px;
-}
-
-.carousel-btn.next {
-  right: 20px;
-}
-
-.carousel-btn:hover {
-  background: rgba(0, 0, 0, 0.6);
-}
-
-.carousel-indicators {
-  position: absolute;
-  bottom: 20px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  z-index: 5;
-}
-
-.carousel-indicators .dot {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.4);
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.carousel-indicators .dot.active {
-  background-color: rgba(255, 255, 255, 1);
-}
-
+/* === CTA & Navigation === */
 .carousel-cta {
   position: absolute;
   bottom: 70px;
@@ -106,4 +67,99 @@ body {
 
 .cta-button:hover {
   background: linear-gradient(135deg, #ee0979, #ff6a00);
+}
+
+/* === Indicators === */
+.carousel-indicators {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  z-index: 5;
+}
+
+.carousel-indicators .dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.carousel-indicators .dot.active {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+/* === Mobile Styles === */
+@media (max-width: 768px) {
+  .carousel-item:not(.mobile-only) {
+    display: none;
+  }
+
+  .carousel-item.mobile-only {
+    display: block;
+  }
+
+  .carousel,
+  .carousel-wrapper,
+  .carousel-item {
+    height: 100vh;
+  }
+
+  .carousel-item img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+  }
+}
+
+@media (max-aspect-ratio: 3/2) {
+  /* adjust the 3/2 threshold to taste */
+  .carousel-item img {
+    object-fit: contain;
+    background: #000; /* optional bars */
+  }
+}
+
+@supports not (aspect-ratio: 1) {
+  .carousel-item::before {
+    /* old padding‑hack */
+    content: "";
+    float: left;
+    padding-top: 56.25%; /* 9 / 16 */
+  }
+  .carousel-item::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+/* 1. iOS Safari fix: get true viewport height */
+:root {
+  --vh: 1svh;
+}
+
+/* .carousel,
+.carousel-wrapper {
+  height: calc(var(--vh) * 100);
+} */
+
+/* 2. Default = full‑bleed */
+/* .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+} */
+
+/* 3. If the screen is very tall, show the whole photo */
+@media (max-aspect-ratio: 3/4) {
+  .carousel-item img {
+    object-fit: contain;
+    background: #000;
+  }
 }

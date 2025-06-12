@@ -40,7 +40,7 @@ updateCarousel();
 rafId = requestAnimationFrame(autoSlide);
 
 // Pause on hover (optional but recommended)
-carousel.addEventListener('mouseenter', () => cancelAnimationFrame(rafId));
+// carousel.addEventListener('mouseenter', () => cancelAnimationFrame(rafId));
 carousel.addEventListener('mouseleave', () => {
   lastTime = performance.now(); // Reset timer to avoid immediate skip
   rafId = requestAnimationFrame(autoSlide);
