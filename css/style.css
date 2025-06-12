@@ -1,6 +1,5 @@
 /* === General Reset === */
-html,
-body {
+html, body {
   margin: 0;
   padding: 0;
   font-family: "Vazir", sans-serif;
@@ -15,6 +14,9 @@ body {
   height: 100svh;
   overflow: hidden;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  box-sizing: border-box;   
 }
 
 .carousel {
@@ -46,6 +48,7 @@ body {
   display: flex;
   justify-content: center;
   z-index: 10;
+  bottom: calc(70px + env(safe-area-inset-bottom));
 }
 
 .cta-button {
