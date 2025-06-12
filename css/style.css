@@ -97,7 +97,7 @@ html, body {
   /* adjust the 3/2 threshold to taste */
   .carousel-item img {
     object-fit: contain;
-    background: #000; /* optional bars */
+    background: transparent;
   }
 }
 
