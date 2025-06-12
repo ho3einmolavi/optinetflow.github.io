@@ -123,5 +123,6 @@ html, body {
 @media (max-aspect-ratio: 3/4) {
   .carousel-item img {
     object-fit: contain;
-    background: radial-gradient(circle at center, #1a1a1a, #000);  }
+    background: transparent
+  }
 }

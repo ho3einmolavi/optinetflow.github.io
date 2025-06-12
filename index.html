@@ -21,6 +21,10 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="preload" as="image" href="img/banner.webp">
     <link rel="preload" as="image" href="img/mobile-banner.webp" media="(max-width:768px)">
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.6.0/color-thief.min.js"></script>
+
   </head>
   <body>
     <div class="carousel-wrapper">
@@ -28,7 +32,7 @@
         <div class="carousel-item">
           <picture>
             <source media="(max-width:768px)" srcset="img/mobile-banner.webp">
-            <img src="img/banner.webp" alt="Slide 1" loading="lazy">
+            <img src="img/banner.webp" alt="Slide 1" loading="lazy" crossorigin="anonymous" data-theme-ready="false">
           </picture>
         </div>
         <div class="carousel-item">
